@@ -11,12 +11,18 @@ export class CharactersPage implements OnInit {
 
   characters: any;
 
-  constructor(private charactersService: CharactersService) { }
+  constructor(
+    private charactersService: CharactersService,
+    private router: Router) { }
 
   ngOnInit() {
     this.charactersService.getCharacters().subscribe(characters => {
       this.characters = characters;
     });
   }
+
+  goToDetails(id: number){
+    this.router.navigate(['/character-details/' + id]);
+ }
   
 }

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Detalles del personaje
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngIf="character">
+    <ion-card-header>
+      <ion-card-subtitle>{{ character.name }}</ion-card-subtitle>
+      <ion-card-title>{{ character.species }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ character.status }}</p>
+      <p>{{ character.gender }}</p>
+    </ion-card-content>
+  </ion-card>
+<ion-list *ngIf="relatives">
+<ion-list-header>
+Familiares
+</ion-list-header>
+<ion-item *ngFor="let relative of relatives">
+{{ relative }}
+</ion-item>
+</ion-list>
+
+<ion-list *ngIf="episodes">
+<ion-list-header>
+Episodios
+</ion-list-header>
+<ion-item *ngFor="let episode of episodes">
+{{ episode.name }}
+</ion-item>
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/characters']">Volver</ion-button>
+  </ion-toolbar>
+</ion-footer>

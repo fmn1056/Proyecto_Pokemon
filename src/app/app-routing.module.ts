@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'convert',
     loadChildren: () => import('./pages/convert/convert.module').then( m => m.ConvertPageModule)
   },
+  {
+    path: 'character-details/:id',
+    loadChildren: () => import('./pages/character-details/character-details.module').then( m => m.CharacterDetailsPageModule)
+  },
 
 
 
