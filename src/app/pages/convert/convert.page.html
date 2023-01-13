@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Convert
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Cantidad</ion-label>
+    <ion-input type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">De</ion-label>
+    <ion-select [(ngModel)]="from">
+      <ion-select-option value="USD">Dólares</ion-select-option>
+      <ion-select-option value="EUR">Euros</ion-select-option>
+      <ion-select-option value="GBP">Libras</ion-select-option>
+      <ion-select-option value="JPY">Yenes</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">A</ion-label>
+    <ion-select [(ngModel)]="to">
+      <ion-select-option value="USD">Dólares</ion-select-option>
+      <ion-select-option value="EUR">Euros</ion-select-option>
+      <ion-select-option value="GBP">Libras</ion-select-option>
+      <ion-select-option value="JPY">Yenes</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="convert()">Convertir</ion-button>
+
+  <ion-card *ngIf="result">
+    <ion-card-header>
+      <ion-card-title>Resultado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{result}}
+    </ion-card-content>
+  </ion-card>
+  <ion-button [routerLink]="['/home']">Volver</ion-button>
+
+  
+
+     

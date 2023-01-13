@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">{{pageTitle}}</ion-title>
+    <ion-avatar slot="end" *ngIf="pageIcon; else noAvatar">    
+    </ion-avatar>
+    <ng-template #noAvatar>       
+    </ng-template>
+  </ion-toolbar>
+</ion-header>
